@@ -15,4 +15,5 @@ const addBookToLibrary = ()=> {
   readStatus = document.getElementById('isRead').value;
 
   const newBook = new Book(title, author, pages, readStatus);
+  myLibrary.push(newBook);
 }
