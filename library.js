@@ -8,11 +8,11 @@ const Book = (title, author, pages, readStatus)=> {
 }
 
 const addBookToLibrary = ()=> {
-  event.preventDefault();
-  title = document.getElementById('bkTitle').value;
-  author = document.getElementById('bkAuthor').value; 
-  pages = document.getElementById('bkPages').value;
-  readStatus = document.getElementById('isRead').value;
+  browser.preventDefault();
+  const title = document.getElementById('bkTitle').value;
+  const author = document.getElementById('bkAuthor').value; 
+  const pages = document.getElementById('bkPages').value;
+  const readStatus = document.getElementById('isRead').value;
 
   const newBook = new Book(title, author, pages, readStatus);
   myLibrary.push(newBook);
