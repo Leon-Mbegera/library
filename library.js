@@ -19,3 +19,4 @@ const addBookToLibrary = ()=> {
 }
 
 const inputForm = document.getElementById('bkForm');
+inputForm.addEventListener('submit', addBookToLibrary);
