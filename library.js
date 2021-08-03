@@ -7,10 +7,12 @@ const Book = (title, author, pages, readStatus)=> {
   this.readStatus = readStatus;
 }
 
-const addBookToLibrary =()=> {
+const addBookToLibrary = ()=> {
   event.preventDefault();
   title = document.getElementById('bkTitle').value;
   author = document.getElementById('bkAuthor').value; 
   pages = document.getElementById('bkPages').value;
   readStatus = document.getElementById('isRead').value;
+
+  const newBook = new Book(title, author, pages, readStatus);
 }
