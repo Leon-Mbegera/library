@@ -17,3 +17,5 @@ const addBookToLibrary = ()=> {
   const newBook = new Book(title, author, pages, readStatus);
   myLibrary.push(newBook);
 }
+
+const inputForm = document.getElementById('bkForm');
