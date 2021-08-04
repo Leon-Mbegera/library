@@ -22,5 +22,14 @@ const inputForm = document.getElementById('bkForm');
 inputForm.addEventListener('submit', addBookToLibrary);
 
 const bookCard = (newBook) => {
-  
+  const div = document.createElement('div');
+  const title = document.createElement('p');
+  title.textContent = newBook.title;
+  const author = document.createElement('p');
+  author.textContent = newBook.author;
+  const pages = document.createElement('p');
+  pages.textContent = newBook.pages;
+  const read = document.createElement('p');
+  read.textContent = newBook.readStatus;
+  div.append([title, author, pages, read]);
 }
