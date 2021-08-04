@@ -18,12 +18,13 @@ const bookCard = (newBook) => {
   const read = document.createElement('p');
   read.textContent = `Read?: ${newBook.readStatus}`;
   const remove = document.createElement('button');
-  remove.innerHTML = "Eject"
+  remove.innerHTML = "Eject Book"
   const readStatus = document.createElement('button');
-  readStatus.innerHTML = "Toggle"
+  readStatus.innerHTML = "Toggle read status"
   div.append(title, author, pages, read, remove, readStatus);
   remove.addEventListener('click', ()=>removeFromLib(myLibrary.indexOf(newBook)) )
   readStatus.addEventListener('click', ()=>readstatus(myLibrary.indexOf(newBook)) )
+  div.className = 'card'
   return div
 }
 
