@@ -32,4 +32,5 @@ const bookCard = (newBook) => {
   const read = document.createElement('p');
   read.textContent = newBook.readStatus;
   div.append([title, author, pages, read]);
+  return div
 }
