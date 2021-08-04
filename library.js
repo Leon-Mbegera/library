@@ -19,8 +19,11 @@ const bookCard = (newBook) => {
   read.textContent = `Read?: ${newBook.readStatus}`;
   const remove = document.createElement('button');
   remove.innerHTML = "Eject"
-  div.append(title, author, pages, read, remove);
+  const readStatus = document.createElement('button');
+  readStatus.innerHTML = "Toggle"
+  div.append(title, author, pages, read, remove, readStatus);
   remove.addEventListener('click', ()=>removeFromLib(myLibrary.indexOf(newBook)) )
+  readStatus.addEventListener('click', ()=>readstatus(myLibrary.indexOf(newBook)) )
   return div
 }
 
@@ -32,6 +35,16 @@ const showBooks = ()=> {
     bookSection.appendChild(newBookCard);
      
   });
+}
+
+function readstatus(index) {
+  if (myLibrary[index].readStatus === false) {
+    myLibrary[index].readStatus = true;
+  }
+  else {
+     myLibrary[index].readStatus = false; 
+  }
+  showBooks();
 }
 
 function removeFromLib(index) {
