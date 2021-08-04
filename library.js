@@ -34,3 +34,12 @@ const bookCard = (newBook) => {
   div.append([title, author, pages, read]);
   return div
 }
+
+const bookSection = document.getElementById('bookSection');
+const showBooks = ()=> {
+  bookSection.innerHTML = "";
+  myLibrary.forEach((newBook)=> {
+    const newBookCard = bookCard(newBook);
+    bookSection.appendChild(newBookCard);
+  });
+}
