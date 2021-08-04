@@ -1,37 +1,23 @@
 const myLibrary = [];
 
-const Book = (title, author, pages, readStatus)=> {
+function Book(title, author, pages, readStatus) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.readStatus = readStatus;
 }
 
-const addBookToLibrary = ()=> {
-  browser.preventDefault();
-  const title = document.getElementById('bkTitle').value;
-  const author = document.getElementById('bkAuthor').value; 
-  const pages = document.getElementById('bkPages').value;
-  const readStatus = document.getElementById('isRead').checked;
-
-  const newBook = new Book(title, author, pages, readStatus);
-  myLibrary.push(newBook);
-}
-
-const inputForm = document.getElementById('bkForm');
-inputForm.addEventListener('submit', addBookToLibrary);
-
 const bookCard = (newBook) => {
   const div = document.createElement('div');
   const title = document.createElement('p');
-  title.textContent = newBook.title;
+  title.textContent = `Book title: ${newBook.title}`;
   const author = document.createElement('p');
-  author.textContent = newBook.author;
+  author.textContent = `Author: ${newBook.author}`;
   const pages = document.createElement('p');
-  pages.textContent = newBook.pages;
+  pages.textContent = `Pages: ${newBook.pages}`;
   const read = document.createElement('p');
-  read.textContent = newBook.readStatus;
-  div.append([title, author, pages, read]);
+  read.textContent = `Read?: ${newBook.readStatus}`;
+  div.append(title, author, pages, read);
   return div
 }
 
@@ -43,3 +29,21 @@ const showBooks = ()=> {
     bookSection.appendChild(newBookCard);
   });
 }
+
+const addBookToLibrary = (event)=> {
+  event.preventDefault();
+  const title = document.getElementById('bkTitle').value;
+  const author = document.getElementById('bkAuthor').value; 
+  const pages = document.getElementById('bkPages').value;
+  const readStatus = document.getElementById('isRead').checked;
+
+  const newBook = new Book(title, author, pages, readStatus)
+  myLibrary.push(newBook);
+  showBooks();
+}
+
+const inputForm = document.getElementById('bkForm');
+inputForm.addEventListener('submit', addBookToLibrary);
+
+
+
