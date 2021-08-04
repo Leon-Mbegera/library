@@ -12,7 +12,7 @@ const addBookToLibrary = ()=> {
   const title = document.getElementById('bkTitle').value;
   const author = document.getElementById('bkAuthor').value; 
   const pages = document.getElementById('bkPages').value;
-  const readStatus = document.getElementById('isRead').value;
+  const readStatus = document.getElementById('isRead').checked;
 
   const newBook = new Book(title, author, pages, readStatus);
   myLibrary.push(newBook);
@@ -20,3 +20,7 @@ const addBookToLibrary = ()=> {
 
 const inputForm = document.getElementById('bkForm');
 inputForm.addEventListener('submit', addBookToLibrary);
+
+const bookCard = (newBook) => {
+  
+}
