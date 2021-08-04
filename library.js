@@ -17,7 +17,10 @@ const bookCard = (newBook) => {
   pages.textContent = `Pages: ${newBook.pages}`;
   const read = document.createElement('p');
   read.textContent = `Read?: ${newBook.readStatus}`;
-  div.append(title, author, pages, read);
+  const remove = document.createElement('button');
+  remove.innerHTML = "Eject"
+  div.append(title, author, pages, read, remove);
+  remove.addEventListener('click', ()=>removeFromLib(myLibrary.indexOf(newBook)) )
   return div
 }
 
@@ -27,7 +30,13 @@ const showBooks = ()=> {
   myLibrary.forEach((newBook)=> {
     const newBookCard = bookCard(newBook);
     bookSection.appendChild(newBookCard);
+     
   });
+}
+
+function removeFromLib(index) {
+  myLibrary.splice(index, 1)
+    showBooks();
 }
 
 const addBookToLibrary = (event)=> {
