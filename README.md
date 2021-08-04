@@ -5,8 +5,8 @@ This project entails building a simple libary where a user can create a new book
 ## To get started
 
 - Clone the repository and cd into the library project.
-` $ git clone https://github.com/Leon-Mbegera/library.git` 
-` $ cd library`
+- ` $ git clone https://github.com/Leon-Mbegera/library.git` 
+- ` $ cd library`
 
 ## Author
 
